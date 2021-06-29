@@ -1,7 +1,7 @@
 <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a style="text-decoration: none; color: black;" href="/"><h3>Shopping Cart</h3></a>
+          <a style="text-decoration: none; color: black; font-weight: bold;" href="/"><h2>Shopping Cart</h2></a>
           <button
           style="border: none;"
             class="navbar-toggler"
@@ -21,8 +21,10 @@
                 aria-current="page"
                 href="/"
               >Products</a>
-              <a class="nav-link active" href="#">Cart</a>
-              <a class="nav-link active" href="#">Orders</a>
+              <a class="nav-link active" href="/cart">Cart</a>
+              {{#if user}}
+              <a class="nav-link active" href="/order">Orders</a>
+              {{/if}}
               <div class="dropdown">
                 <button
                   class="btn dropdown-toggle"
@@ -31,10 +33,18 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
+                {{#if user}}
+                {{user.Name}}
+                {{else}}
                   Accounts
+                  {{/if}}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Login</a></li>
+                  {{#if user}}
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                  {{else}}
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                  {{/if}}
                 </ul>
               </div>
             </div>

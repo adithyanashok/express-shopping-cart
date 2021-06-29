@@ -1,0 +1,47 @@
+<section>
+  <div class="container">
+    <form class="row g-3" method="POST" action="/signup">
+      <h2 style="font-weight: bold;">Create New Account</h2>
+      <div class="col-md-12">
+        <label for="validationDefault01" class="form-label">Your Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationDefault01"
+          placeholder="Enter Your Name"
+          name="Name"
+          required
+        />
+      </div>
+      <div class="col-md-12">
+        <label for="validationDefaultUsername" class="form-label">Enter Email</label>
+        <div class="input-group">
+          <input
+            type="email"
+            class="form-control"
+            id="validationDefaultUsername"
+            placeholder="Enter Email"
+            name="Email"
+            aria-describedby="inputGroupPrepend2"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="validationDefault03" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter Password"
+          name="Password"
+          id="validationDefault03"
+          required
+        />
+        <a href="/login">Already Have An Account?</a>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+  </div>
+</section>
