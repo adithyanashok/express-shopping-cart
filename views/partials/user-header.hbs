@@ -21,7 +21,7 @@
                 aria-current="page"
                 href="/"
               >Products</a>
-              <a class="nav-link active" href="/cart">Cart</a>
+              <a class="nav-link active" href="/cart">Cart<span class="badge bg-success" id="cart-count">{{cartCount}}</span></a>
               {{#if user}}
               <a class="nav-link active" href="/order">Orders</a>
               {{/if}}
