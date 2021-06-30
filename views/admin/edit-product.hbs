@@ -1,0 +1,60 @@
+<section class="pt-5">
+    <div class="container">
+        <h2>Edit Product</h2>
+        <form class="row g-3" method="POST" action="/admin/edit-product/{{product._id}}" enctype="multipart/form-data">
+  <div class="col-md-6">
+    <label for="validationDefault01" class="form-label">Product Name</label>
+    <input name="Name" placeholder="Enter Product Name" value="{{product.Name}}" type="text" class="form-control" id="validationDefault01" required>
+  </div>
+  <div class="col-md-6">
+    <label for="validationDefault02" class="form-label">Price</label>
+    <input name="Price" placeholder="Enter Price" type="text" value="{{product.Price}}" class="form-control" id="validationDefault02" required>
+  </div>
+  <div class="col-md-6">
+    <label for="validationDefaultUsername" class="form-label">Description</label>
+    <div class="input-group">
+      <input name="Description" placeholder="Enter Description" value="{{product.Description}}" type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+    </div>
+  </div>
+  
+
+  <div class="col-md-3">
+    <label for="validationDefault05" class="form-label">Product Images</label>
+    <img src="/images/{{product._id}}.jpg" alt="" style="width: 100px; height: auto;" id="imgView">
+    <input name="Image" type="file" class="form-control" id="validationDefault05" onchange="viewImage(event)">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Edit Product</button>
+  </div>
+</form>
+    </div>
+</section>
+<script>
+    function viewImage(event) {
+    document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+}
+</script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+
+</script>
